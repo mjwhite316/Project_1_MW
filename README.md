@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-https://github.com/mjwhite316/Cybersecurity_project_1/blob/Images/project%201%20diagram.png
+https://github.com/mjwhite316/Project_1_MW/blob/main/Images/project%201%20diagram.png
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the filebeat_playbook.yml file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -45,7 +45,8 @@ Only the Jump Box machine can accept connections from the Internet. Access to th
 23.169.64.0/27 - home location, laptop travels, and doesn't always get the same ip upon return.
 173.10.18.185 - work location
 
-Machines within the network can only be accessed by Jump Box.
+Machines within the network can only be accessed by Jump Box, unless the network is fully deployed, at which point a new rule allowing web traffic to the load
+balancer will be written.
 
 
 A summary of the access policies in place can be found in the table below.
@@ -71,7 +72,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-https://github.com/mjwhite316/Cybersecurity_project_1/blob/main/1-elk761.jpg
+https://github.com/mjwhite316/Project_1_MW/blob/main/Images/Docker%20ps%20screenshot.jpg
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -81,7 +82,7 @@ We have installed the following Beats on these machines:
 - I was able to install filebeat on the machines, but there was an error in the communication with the ELK box. Even though all of the connections between the machines were up,
 and Azure's test connection function said that they should have been able to communicate.
 
-Azure confirmation: https://github.com/mjwhite316/Cybersecurity_project_1/blob/main/connection%20allowed.jpg
+Azure confirmation: https://github.com/mjwhite316/Project_1_MW/blob/main/Images/connection%20allowed.jpg
 
 These Beats allow us to collect the following information from each machine:
 Filebeat is able to look at whatever log file locations you specify. Some of the most useful logs could be those indicating who is logging into different machines and when. 
@@ -99,6 +100,6 @@ SSH into the control node and follow the steps below:
 place it in /etc/ansible/files/filebeat-config.yml and update it to include the appropriate ip addresses of the elk server machine under the filebeat and kibana sections.
 - Run the playbook, and navigate to http://<elk_server_public_ip>/app/kibana to verify that kibana is up and running. 
 - If executed properly you will see a loading page similar to this:
-https://github.com/mjwhite316/Cybersecurity_project_1/blob/main/Kibana%20loading%20page.jpg
+https://github.com/mjwhite316/Project_1_MW/blob/main/Images/Kibana%20loading%20page.jpg
 
 
